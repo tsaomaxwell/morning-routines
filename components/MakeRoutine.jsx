@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button, TouchableOpacity} from 'react-native';
 import { useState } from 'react';
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import BouncyCheckbox from "react-native-bouncy-checkbox";
     
@@ -57,8 +58,9 @@ export default function MakeRoutine({ navigation }) {
             
             <View>
                 <TouchableOpacity style = {styles.nextButtonContainer}
-                    onPress={() =>
-                        navigation.navigate('Home')
+                    onPress={() => {
+                      AsyncStorage.setItem('data',"bye").then(() => navigation.navigate('Home'))
+                    }
                     }>
                     <Text style = {styles.nextButtonText}>Set Routine</Text>
                 </TouchableOpacity>
