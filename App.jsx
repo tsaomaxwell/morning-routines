@@ -8,15 +8,28 @@ import Post from './components/Post';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Ionicons } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator();
 
 function Home() {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Dashboard" component={Dashboard} />
-      <Tab.Screen name="Post" component={Post} />
-      <Tab.Screen name="Feed" component={Feed} />
+      <Tab.Screen name="Dashboard" component={Dashboard} options={{
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="fitness" color={color} size={size} />
+          ),
+        }}/>
+      <Tab.Screen name="Post" component={Post} options={{
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="add-circle" color={color} size={size} />
+          ),
+        }}/>
+      <Tab.Screen name="Feed" component={Feed} options={{
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="globe" color={color} size={size} />
+          ),
+        }}/>
     </Tab.Navigator>
   );
 }
@@ -27,10 +40,6 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen
-          name="Login"
-          component={Login}
-        />
         <Stack.Screen
           name="Make Routine"
           component={MakeRoutine}
