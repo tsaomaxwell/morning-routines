@@ -6,7 +6,7 @@ export default function Login({ navigation }) {
     <View style = {styles.container}>
         <Text>Login</Text>
         <Button
-            title="Login"
+            title="Login2"
             onPress={() =>
                 navigation.navigate('Make Routine')
             }
