@@ -15,8 +15,8 @@ function Home() {
   return (
     <Tab.Navigator>
       <Tab.Screen name="Dashboard" component={Dashboard} />
-      <Tab.Screen name="Post" component={Dashboard} />
-      <Tab.Screen name="Feed" component={Dashboard} />
+      <Tab.Screen name="Post" component={Post} />
+      <Tab.Screen name="Feed" component={Feed} />
     </Tab.Navigator>
   );
 }
