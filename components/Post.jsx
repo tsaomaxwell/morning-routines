@@ -12,9 +12,10 @@ export default function Post({ navigation }) {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null);
   const [items, setItems] = useState([
-    {label: 'Meditation', value: 'Meditation'},
+    {label: 'Yoga', value: 'Yoga'},
+    {label: 'Running', value: 'Running'},
     {label: 'Reading', value: 'Reading'},
-    {label: 'Coding', value: 'Coding'}
+    {label: 'Meditation', value: 'Meditation'},
   ]);
 
   const pickImage = async () => {
