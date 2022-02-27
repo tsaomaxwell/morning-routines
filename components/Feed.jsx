@@ -84,6 +84,10 @@ const styles = StyleSheet.create({
     aspectRatio: 1,
     alignSelf: 'center',
   },
+  textInput:{
+    paddingHorizontal: 34
+  }
+
   CaptionStyle: 
   {
     display: 'flex',
