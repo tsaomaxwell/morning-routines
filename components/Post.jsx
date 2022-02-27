@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, Button, Alert, Pressable, TextInput, KeyboardAvoidingView, TouchableWithoutFeedback, Keyboard, ScrollView } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, Image, Pressable, TextInput, ScrollView } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
-
+import { white } from 'color-name';
 
 export default function Post({ navigation }) {
   const [image, setImage] = useState(null);
@@ -29,18 +28,26 @@ export default function Post({ navigation }) {
       
         {image && <Image source={{ uri: image }} style={ styles.profilePic } />}
         <Pressable style={styles.button} onPress={pickImage}>
-      <Text style={styles.text}>Upload an image</Text>
-    </Pressable>
-      <Text style={styles.heading}>Description</Text>
-    <TextInput 
-    style = {styles.textInput}
-    editable
-    multiline
-    numberOfLines={2}
-    placeholder={"Write a caption... "}
-    />
-    </ScrollView>
+          <Text style={styles.text}>Upload an image</Text>
+        </Pressable>
         
+        <Text style={styles.heading}>Description</Text>
+        
+        <TextInput 
+        style = {styles.textInput}
+        editable
+        multiline
+        numberOfLines={2}
+        placeholder={"Write a caption... "}
+        />
+    
+    <Pressable style={styles.submitButton} onPress={() =>
+      navigation.navigate('Feed')
+    } >
+          <Text style={styles.submitText}>Post</Text>
+        </Pressable>
+
+    </ScrollView> 
     
     </View>
 
@@ -82,8 +89,23 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     backgroundColor: "#FF4A4A",
   },
+  submitButton: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginVertical: 20,
+    paddingVertical: 14,
+    paddingHorizontal: 32,
+    borderRadius: 4,
+    elevation: 3,
+    backgroundColor: 'black', 
+  },
   text:{
     color: 'white'
+  },
+  submitText:{
+    fontSize: 25,
+    color: "white",
+    fontWeight: "bold",
   },
   heading:{
     color: 'black',
@@ -100,3 +122,6 @@ const styles = StyleSheet.create({
   }
 
 });
+
+
+
