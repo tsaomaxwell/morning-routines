@@ -1,32 +1,63 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, Button, Alert, Pressable, TextInput } from 'react-native';
+import { ScrollView, StyleSheet, Text, Image, View } from 'react-native';
+
+
+const feedExample = [
+  {
+    profilepicture:'',
+    username:'jennie_the_human',
+    picture:'https://static.onecms.io/wp-content/uploads/sites/35/2019/04/16045733/benefits-yoga-fb.jpg',
+    caption: 'Starting the morning strong with some meditation!',
+  },
+  {
+    username:'Michaela123',
+    picture:'https://images.pexels.com/photos/3823039/pexels-photo-3823039.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+    caption: '1..2..3.. big stretch :)',
+  },
+  {
+    username:'ssssssteve',
+    picture:'http://cdn.mos.cms.futurecdn.net/v44n2mBJgaRoCkkFGjDtRP.jpeg',
+    caption: 'running away from my bad habits',
+  },
+  {
+    username:'hippiehank22',
+    picture:'https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cmVhZGluZ3xlbnwwfHwwfHw%3D&w=1000&q=80',
+    caption: 'No better way to start your day than with a nice book',
+  },
+
+]
+
+const Post = ({username, picture, caption}) => {
+
+  return (
+    <View style = {styles.PostStyle}>
+      <Text style = {styles.UsernameStyle1}>{username}</Text>
+      <Image source ={{uri:picture}} style={styles.ImageStyle}/>
+      <Text style = {styles.CaptionStyle}>{caption}</Text>
+    </View>
+  )
+}
 
 export default function Feed({ navigation }) {
   return (
     <View style = {styles.container}>
-        <Image
-        style={styles.profilePic}
-        source={{
-          uri: 'https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-800x825.jpg',
-        }}
-      />
-      <Text style={styles.heading}>Description</Text>
-    <TextInput 
-    style = {styles.textInput}
-    editable
-    multiline
-    numberOfLines={6}
-    placeholder={"Write a caption... "}
-    />
-        <Pressable style={styles.button} onPress={() => 
-        Alert.alert("Upload an image to the app")
-        }>
-      <Text style={styles.text}>Upload an image</Text>
-    </Pressable>
-    
+        <ScrollView showsVerticalScrollIndicator={false}>
+          {
+            feedExample.map((post,i) => {
+              return (
+                <Post key={i} username = {post.username} picture = {post.picture } caption={post.caption}/>
+              )
+            
+            })
+          }
+        </ScrollView>
     </View>
   );
 }
+
+<ScrollView>
+  <Text>Hi there</Text>
+</ScrollView>
 
 const styles = StyleSheet.create({
   container: {
@@ -35,31 +66,34 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  profilePic: {
-    width: 300,
-    height: 300,
-    resizeMode: 'contain',
-  }, 
-  button: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginVertical: 20,
-    paddingVertical: 12,
-    paddingHorizontal: 32,
-    borderRadius: 4,
-    elevation: 3,
-    backgroundColor: 'black',
+  PostStyle:
+  {
+    padding: 10,
   },
-  text:{
-    color: 'white'
+  UsernameStyle1:
+  {
+    fontSize: 14,
+    fontWeight: 'bold',
+    paddingBottom: 10,
+    alignSelf: 'flex-start'
   },
-  heading:{
-    color: 'black',
-    paddingVertical: 12,
-    fontSize: 30
+  ImageStyle:
+  {
+    width: '95%',
+    height: undefined,
+    aspectRatio: 1,
+    alignSelf: 'center',
   },
   textInput:{
     paddingHorizontal: 34
   }
 
+  CaptionStyle: 
+  {
+    display: 'flex',
+    flexDirection: 'row',
+    fontSize: 14,
+    width: 250,
+    paddingTop: 10,
+  },
 });
