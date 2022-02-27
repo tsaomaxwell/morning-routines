@@ -1,10 +1,22 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Image, Pressable, TextInput, ScrollView } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
+import DropDownPicker from 'react-native-dropdown-picker'
 import { white } from 'color-name';
+
+DropDownPicker.setListMode("SCROLLVIEW");
+
 
 export default function Post({ navigation }) {
   const [image, setImage] = useState(null);
+  const [open, setOpen] = useState(false);
+  const [value, setValue] = useState(null);
+  const [items, setItems] = useState([
+    {label: 'Yoga', value: 'Yoga'},
+    {label: 'Running', value: 'Running'},
+    {label: 'Reading', value: 'Reading'},
+    {label: 'Meditation', value: 'Meditation'},
+  ]);
 
   const pickImage = async () => {
     // No permissions request is necessary for launching the image library
@@ -24,7 +36,7 @@ export default function Post({ navigation }) {
 
   return (
     <View style = {styles.container}>
-      <ScrollView contentContainerStyle= {styles.scrollContainer}>
+      <ScrollView contentContainerStyle= {styles.scrollContainer} nestedScrollEnabled={true}>
       
         {image && <Image source={{ uri: image }} style={ styles.profilePic } />}
         <Pressable style={styles.button} onPress={pickImage}>
@@ -41,13 +53,30 @@ export default function Post({ navigation }) {
         placeholder={"Write a caption... "}
         />
     
+
+        <DropDownPicker
+          open={open}
+          value={value}
+          items={items}
+          setOpen={setOpen}
+          setValue={setValue}
+          setItems={setItems}
+          // defaultIndex={0}
+          containerStyle={styles.dropdown}
+          listMode="MODAL"
+          scrollViewProps={{
+            nestedScrollEnabled: true,
+    }}
+          // onChangeItem={item => console.log(item.label, item.value)}
+          />
+
     <Pressable style={styles.submitButton} onPress={() =>
       navigation.navigate('Feed')
     } >
           <Text style={styles.submitText}>Post</Text>
         </Pressable>
-
-    </ScrollView> 
+          
+          </ScrollView> 
     
     </View>
 
@@ -74,8 +103,8 @@ const styles = StyleSheet.create({
       paddingHorizontal:0
   },
   profilePic: {
-    width: 300,
-    height: 300,
+    width: 200,
+    height: 200,
     resizeMode: 'contain',
   }, 
   button: {
@@ -92,7 +121,7 @@ const styles = StyleSheet.create({
   submitButton: {
     alignItems: 'center',
     justifyContent: 'center',
-    marginVertical: 20,
+    // marginVertical: 20,
     paddingVertical: 14,
     paddingHorizontal: 32,
     borderRadius: 4,
@@ -121,6 +150,14 @@ const styles = StyleSheet.create({
     marginHorizontal:20,
     borderColor: 'gray',
       borderWidth: 1,
+  },
+  dropdown:{
+    width:350,
+    // position:"relative",
+    paddingVertical: 20,
+    marginBottom: 18,
+    // zIndex: 1000,
+    // elevation: 10,
   }
 
 });
