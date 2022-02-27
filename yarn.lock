@@ -2553,6 +2553,14 @@ expo-font@~10.0.5:
   dependencies:
     fontfaceobserver "^2.1.0"
 
+expo-image-picker@~12.0.1:
+  version "12.0.2"
+  resolved "https://registry.yarnpkg.com/expo-image-picker/-/expo-image-picker-12.0.2.tgz#4789c5419208ff8ede557784368a7f18f3878c30"
+  integrity sha512-rAoNGtofV5cg3UN+cdIGDVfbMvbutBX6uNV7jCIEw/WZxZlbW+R7HC8l5lGDFtoLVqcpkHE/6JpAXvESxVSAOA==
+  dependencies:
+    "@expo/config-plugins" "^4.0.2"
+    uuid "7.0.2"
+
 expo-keep-awake@~10.0.2:
   version "10.0.2"
   resolved "https://registry.npmjs.org/expo-keep-awake/-/expo-keep-awake-10.0.2.tgz"
@@ -4552,6 +4560,29 @@ react-native-codegen@^0.0.6:
     jscodeshift "^0.11.0"
     nullthrows "^1.1.1"
 
+react-native-image-crop-picker@^0.37.3:
+  version "0.37.3"
+  resolved "https://registry.yarnpkg.com/react-native-image-crop-picker/-/react-native-image-crop-picker-0.37.3.tgz#f260e40b6a6ba8e98f4db3dde25a8f09e0936385"
+  integrity sha512-ih+0pWWRUNEFQyaHwGbH9rqJNOb7EBYMwKJhTY0VmsKIA9E+usfwMmQXAFIfOnee7fTn0A2vOXkBCPQZwyvnQw==
+
+react-native-image-picker@^4.7.3:
+  version "4.7.3"
+  resolved "https://registry.yarnpkg.com/react-native-image-picker/-/react-native-image-picker-4.7.3.tgz#f5863b27bf2e76c83649dd8efea4598426bd04e8"
+  integrity sha512-eRKm4wlsmZHmsWFyv77kYc2F+ZyEVqe0m7mqhsMzWk6TQT4FBDtEDxmRDDFq+ivCu/1QD+EPhmYcAIpeGr7Ekg==
+
+react-native-iphone-x-helper@^1.0.3:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/react-native-iphone-x-helper/-/react-native-iphone-x-helper-1.3.1.tgz#20c603e9a0e765fd6f97396638bdeb0e5a60b010"
+  integrity sha512-HOf0jzRnq2/aFUcdCJ9w9JGzN3gdEg0zFE4FyYlp4jtidqU03D5X7ZegGKfT1EWteR0gPBGp9ye5T5FvSWi9Yg==
+
+react-native-keyboard-aware-scroll-view@^0.9.5:
+  version "0.9.5"
+  resolved "https://registry.yarnpkg.com/react-native-keyboard-aware-scroll-view/-/react-native-keyboard-aware-scroll-view-0.9.5.tgz#e2e9665d320c188e6b1f22f151b94eb358bf9b71"
+  integrity sha512-XwfRn+T/qBH9WjTWIBiJD2hPWg0yJvtaEw6RtPCa5/PYHabzBaWxYBOl0usXN/368BL1XktnZPh8C2lmTpOREA==
+  dependencies:
+    prop-types "^15.6.2"
+    react-native-iphone-x-helper "^1.0.3"
+
 react-native-safe-area-context@3.3.2:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/react-native-safe-area-context/-/react-native-safe-area-context-3.3.2.tgz#9549a2ce580f2374edb05e49d661258d1b8bcaed"
@@ -5480,6 +5511,11 @@ utils-merge@1.0.1:
   version "1.0.1"
   resolved "https://registry.npmjs.org/utils-merge/-/utils-merge-1.0.1.tgz"
   integrity sha1-n5VxD1CiZ5R7LMwSR0HBAoQn5xM=
+
+uuid@7.0.2:
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-7.0.2.tgz#7ff5c203467e91f5e0d85cfcbaaf7d2ebbca9be6"
+  integrity sha512-vy9V/+pKG+5ZTYKf+VcphF5Oc6EFiu3W8Nv3P3zIh0EqVI80ZxOzuPfe9EHjkFNvf8+xuTHVeei4Drydlx4zjw==
 
 uuid@^3.3.2, uuid@^3.4.0:
   version "3.4.0"
