@@ -99,6 +99,7 @@ export default function Dashboard({ navigation }) {
   const markers = makeCalDates();
   return (
     <ScrollView>
+      <View style={styles.container}>
         <View>
         {list(navigation)}
         </View>
@@ -108,6 +109,7 @@ export default function Dashboard({ navigation }) {
           markingType={'period'}
           markedDates={markers}
         />
+        </View>
     </ScrollView>
   );
 }
@@ -116,16 +118,17 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    padding: 10
   },
   todo: {
     backgroundColor: '#c4c4c4',
     margin: 10,
     height: 40,
-    width: 200,
+    width: "80%",
+    alignSelf: 'center',
     padding: 5,
     borderWidth: 2,
+    borderRadius: 10,
     flexDirection: "row",
     borderColor: "black",
     justifyContent: 'center',
