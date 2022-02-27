@@ -4,7 +4,6 @@ import { ScrollView, StyleSheet, Text, Image, View } from 'react-native';
 
 const feedExample = [
   {
-    profilepicture:'',
     username:'jennie_the_human',
     picture:'https://static.onecms.io/wp-content/uploads/sites/35/2019/04/16045733/benefits-yoga-fb.jpg',
     caption: 'Starting the morning strong with some meditation!',

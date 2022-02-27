@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
   },
   
   nextButtonText:  {
-    fontSize: 32,
+    fontSize: 28,
     fontWeight: "bold",
   },
   
