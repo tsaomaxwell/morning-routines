@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
   },
   textInput:{
     paddingHorizontal: 34
-  }
+  },
 
   CaptionStyle: 
   {
