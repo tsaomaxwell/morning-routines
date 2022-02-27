@@ -4,6 +4,11 @@ import { ScrollView, StyleSheet, Text, Image, View } from 'react-native';
 
 const feedExample = [
   {
+    username:'Evan_W',
+    picture:'https://live.staticflickr.com/65535/51906715139_2a42785227_k.jpg',
+    caption: 'I love yoga so much!',
+  },
+  {
     username:'jennie_the_human',
     picture:'https://static.onecms.io/wp-content/uploads/sites/35/2019/04/16045733/benefits-yoga-fb.jpg',
     caption: 'Starting the morning strong with some meditation!',
@@ -92,7 +97,8 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     fontSize: 14,
-    width: 250,
-    paddingTop: 10,
+    paddingTop: 12,
+    padding: 10
+    
   },
 });

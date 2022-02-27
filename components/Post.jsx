@@ -97,10 +97,12 @@ const styles = StyleSheet.create({
     paddingHorizontal: 32,
     borderRadius: 4,
     elevation: 3,
-    backgroundColor: 'black', 
+    borderRadius: 50,
+    backgroundColor: "#FF4A4A",
   },
   text:{
-    color: 'white'
+    color: 'white',
+    fontWeight: "bold",
   },
   submitText:{
     fontSize: 25,

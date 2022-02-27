@@ -9,19 +9,19 @@ const userDataExample = {
     "name":"Maxwell",
     "routine": [
         {
-            "activity":"yoga",
+            "activity":"Yoga",
             "datesDone":[new Date(), new Date(2022, 1, 25), new Date(2022, 1, 22)]
         },
         {
-            "activity":"healthy bkfast",
+            "activity":"Running",
             "datesDone":[new Date(), new Date(2022, 1, 25), new Date(2022, 1, 22)]
         },
         {
-          "activity":"running",
+          "activity":"Reading",
           "datesDone":[new Date(), new Date(2022, 1, 25)]
         },
         {
-          "activity":"reading",
+          "activity":"Meditating",
           "datesDone":[new Date(), new Date(2022, 1, 25)]
       }
     ]
@@ -45,7 +45,7 @@ const history = () => {
   
   return userDataExample.routine.map((activity) => {
     return (
-      <Text>{activity.activity}: {getDaysDone(activity.datesDone)} day streak</Text>
+      <Text style = {styles.textContainer}>{activity.activity}:  {getDaysDone(activity.datesDone)} day streak</Text>
     )
   });
 }
@@ -103,7 +103,7 @@ export default function Dashboard({ navigation }) {
         <View>
         {list(navigation)}
         </View>
-        <Text>History</Text>
+        <Text style = {styles.textContainer}>History</Text>
         {history()}
         <Calendar 
           markingType={'period'}
@@ -142,5 +142,13 @@ const styles = StyleSheet.create({
     flex: 5,
     fontSize: 18,
     marginLeft: 10,
+  },
+  
+  textContainer: {
+    fontSize: 16,
+    fontWeight: "bold",
+    marginLeft: 20,
+    padding: 1,
+    
   }
 });
