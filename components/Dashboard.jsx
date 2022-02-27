@@ -10,7 +10,7 @@ const userDataExample = {
     "routine": [
         {
             "activity":"Yoga",
-            "datesDone":[new Date(), new Date(2022, 1, 25), new Date(2022, 1, 22)]
+            "datesDone":[new Date(2022, 1, 25)]
         },
         {
             "activity":"Running",
@@ -45,7 +45,7 @@ const history = () => {
   
   return userDataExample.routine.map((activity) => {
     return (
-      <Text style = {styles.textContainer}>{activity.activity}:  {getDaysDone(activity.datesDone)} day streak</Text>
+      <Text key = {"his"+ activity.activity} style = {styles.textContainer}>{activity.activity}:  {getDaysDone(activity.datesDone)} day streak</Text>
     )
   });
 }
